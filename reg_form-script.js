@@ -1,38 +1,23 @@
-/* //Testing for whether the age is below 27 as required or not
-function validateAge() {
-  var age = document.forms["reg_form"]["Age"].value;
-  if(age>27)
-  {
-    alert("Only people below age 27 can register!");
-    return false;
-  }
-}
-//Testing for whether a valid conact number has been provided or not
-function validateContact() {
-  var contact_length = (document.forms["reg_form"]["Contact"].value).length();
-  if(contact_length !=10)
-  {
-    alert("Please enter a valid 10 digit contact number.");
-    return false;
-  }
-}
-
-//Making sure that the user doesn't enter the name as the Password
-if(Password==Name)
-{
-  string pwd;
-  prompt("The password entered must be different form the entered name! Please enter a different one", pwd);
-  alert(pwd);
-  Password = pwd;
-} */
-/*<script>
+<script>
 function validateForm()
 {
-  var name = document.reg_form.Name;
-  var age = document.reg_form.Age;
-  var contact = document.forms["reg_form"]["Contact"];
+  var age = document.reg_form.Age.value();
+  var name = document.reg_form.Name.value();
+  var password = document.reg_form.Password.value();
+  var contact = document.reg_form.Contact.value();
+  var email = document.reg_form.Email.value();
 
-  function allLetter(name)
+  function checkAge()
+  {
+    if(age >27)
+    {
+      alert("Only users below age 27 can enter!");
+      return false;
+      Age.focus();
+    }
+  }
+
+  function checkName(name)
   {
     var letters = /^[A-Za-z]+$/;
     if(name.value.match(letters))
@@ -41,35 +26,49 @@ function validateForm()
     }
     else
     {
-      alert('Username must have alphabet characters only');
-      name.focus();
+      alert("Name must have alphabets only!");
       return false;
+      Name.focus();
     }
   }
 
-  if(age.value()>27)
+  function checkPassword()
   {
-    alert("Only people below the age of 27 can enter!");
-  age.focus();
-  return false;
+    if(password == name)
+    {
+      alert("Password cannot be the same as the name!");
+      return false;
+      Password.focus();
+      Name.focus();
+    }
   }
 
-
-}
-</script> */
-
-<script>
-function validateForm()
-{
-  //var age = document.reg_form.Age.value();
-
-  function checkAge()
+  function checkContact()
   {
-    if(document.reg_form.Age.value >27)
+    if(contact.length()==10)
     {
-      alert("Only users below age 27 can enter!");
+      return true;
+    }
+    else
+    {
+      alert("Please enter a valid 10 digit contact number!");
       return false;
-      Age.focus();
+      Contact.focus();
+    }
+  }
+
+  function checkEmail(email)
+  {
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if(email.value.match(mailformat))
+    {
+      return true;
+    }
+    else
+    {
+      alert("You have entered an invalid email address!");
+      Email.focus();
+      return false;
     }
   }
 }
