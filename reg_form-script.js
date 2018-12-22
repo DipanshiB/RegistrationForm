@@ -1,4 +1,5 @@
-alert("File linked!");
+<script>
+alert("File linked!"); //just checking to see if the JS was actually linking to the HTML  or not
 
 function validateForm()
 {
@@ -85,3 +86,4 @@ function closeSlideMenu()
   document.reg_form.getElementById('side-menu').style.width='0px';
   document.reg_form.getElementById('main').style.margin-left='0px';
 }
+</script>
