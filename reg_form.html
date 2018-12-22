@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<head>
+<title> Registration Form </title>
+<link rel="stylesheet" type="text/css" href="reg_form-stylesheet.css">
+<script  src="reg_form-script.js"> </script>
+</head>
+<body>
+  <!-- creating a hamburger menu button for toggling the bar -->
+<!--  <div class="toggle-btn">
+    <span> </span>
+    <span> </span>
+    <span> </span>
+  </div> -->
+  <!-- creating an unordered list  for the side navigation bar giving it the id as sidebar-->
+<!--  <div id="sidebar">
+    <ul>
+      <li> Home </li>
+      <li> About </li>
+      <li> Event </li>
+      <li> Contact </li>
+    </ul>
+  </div> -->
+  <nav class="navbar">
+    <span class="open-slide">
+      <a href="#" onclick="openSlideMenu()"> <!-- the # just a placeholder for a link that goes nowhere -->
+        <svg width="30" height="30"> <!-- sets the width and height of the hamburger menu icon -->
+          <path d="M0,5 30,5" stroke="#fff" stroke-width="5"/>
+          <path d="M0,14 30,14" stroke="#fff" stroke-width="5"/> <!--the path element draws the line by taking the 'draw' attribute (d)-->
+          <path d="M0,23 30,23" stroke="#fff" stroke-width="5"/> <!-- stroke="#fff" gives it the stroke colour of white and so each line of the hamburger is white -->
+        </svg>
+      </a>
+    </span>
+
+    <ul class="navbar-nav">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Events</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+
+    <div id="side-menu" class="side-nav"> <!--giving the id cos we need to retrieve it from the JS part -->
+      <!--this is the code for adding in the side navigation bar-->
+      <a href="#" class="btn-close" onclick="closeSideMenu()">&times;</a> <!--the &times; sign gives us the x for close-->
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Events</a>
+      <a href="#">Contact</a>
+    </div>
+  <div id="main">
+  <h1 align="center"> REGISTRATION FORM </h1>
+  <h3> Please fill the provided form for registering as a member of ACM-W Pilani chapter. </h3>
+  <form name="reg_form" action="http://bitsacmw.hosting.acm.org/home.html" onSubmit="return validateForm();" method = "POST">
+    <table>
+    <tr>
+    <td>Name:</td>
+    <td><input type="text" name="Name" autofocus required /> </td></tr>
+    <tr>
+    <td> Password:</td>
+    <td><input type="password" name="Password" required/> </td></tr>
+    <tr>
+    <td> Age:</td>
+    <td><input type="number" name="Age" required/> </td></tr>
+    <tr>
+    <td> Email Address:</td>
+    <td><input type="email" name="Email" required/> </td></tr>
+    <tr>
+    <td> Gender:</td>
+    <td><input type="radio" name="Gender" value="Male" />Male </td><br />
+    <td><input type="radio" name="Gender" value="Female" />Female </li></td></tr><br />
+    <tr>
+    <td> Nationality:</td>
+    <td><select>
+        <option value="Indian">Indian </option>
+        <option value="Chinese">Chinese </option>
+        <option value="Spanish">Spanish </option>
+        <option value="French">French </option>
+        <option value="English">English </option>
+        <option value="American">American </option></li></select></td></tr><br />
+    <tr>
+    <td> Please mention your skills:</td>
+    <td><input type="checkbox" name="Backend" value="Backend" />Backend</td>
+    <td><input type="checkbox" name="Frontend" value="Frontend" />Frontend </td></tr><br />
+    <tr>
+    <td> Contact Number: </td>
+    <td><input type="number" name="Contact" required /></td></tr>
+  </table>
+    <input type="submit" value="SUBMIT" />
+    <input type="reset" value="CANCEL" />
+
+  </form>
+  </div>
+</body>
